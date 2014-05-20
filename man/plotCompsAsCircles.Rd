@@ -1,0 +1,76 @@
+\name{plotCompsAsCircles}
+\alias{plotCompsAsCircles}
+\title{Create or add to a circle plot of age or size comp.s.}
+\usage{
+plotCompsAsCircles(z = NULL, x = NULL, y = NULL, transform = TRUE,
+  overplot = FALSE, maxRadius = 0.5, scale = NULL, fg = c("black",
+  "black"), bg = c("green", "blue"), lty = c("solid", "solid"),
+  transparency = 0.5, plotCohorts = FALSE, units = "data units",
+  main = NA, subtitle = NA, xlims = NULL, ylims = NULL, xaxt = TRUE,
+  yaxt = TRUE, xlab = NA, ylab = NA, ...)
+}
+\arguments{
+  \item{z}{- vector or matrix of values to be plotted as
+  circles}
+
+  \item{x}{- x coordinates of circle centers}
+
+  \item{y}{- y coordinates of circle centers}
+
+  \item{transform}{- flag (T/F) to scale z values to circle
+  area (T) or radius (F)}
+
+  \item{overplot}{- flag (T/F) to plot over an existing
+  plot}
+
+  \item{maxRadius}{- max radius (in data units) to allow}
+
+  \item{scale}{- scale factor to normalize z values by}
+
+  \item{fg}{- vector of colors for circle outlines
+  ("black","grey"),}
+
+  \item{bg}{- vector of colors for circle fills
+  ("blue","green"),}
+
+  \item{lty}{- vector of line types for circle outlines
+  ("solid","dotted") to use}
+
+  \item{transparency}{- alpha level for transparency (0-1)}
+
+  \item{plotCohorts}{flag (T/F) to plot cohorts}
+
+  \item{units}{- label for units}
+
+  \item{main}{- title for plot}
+
+  \item{subtitle}{- subtitle for plot}
+
+  \item{xlims}{- x axis limts}
+
+  \item{ylims}{- y axis limits}
+
+  \item{xaxt}{- x axis text}
+
+  \item{yaxt}{- y axis text}
+
+  \item{xlab}{- x axis label}
+
+  \item{ylab}{- y axis label}
+}
+\value{
+value used to scale the plot
+}
+\description{
+Creates or adds to a circle plot of age or size comp.s.
+}
+\details{
+
+
+if z is a vector, x must be a vector of length(z) if z is a
+matrix, x can be a matrix of dim(z) or x can be a vector of
+length ncol(z) if z is a vector, y must be a vector of
+length(z) if z is a matrix, y can be a matrix of dim(z) or
+y can be a vector of length nrow(z)
+}
+

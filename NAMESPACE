@@ -1,0 +1,5 @@
+export(plotCompsAsCircles)
+export(plotErrorBars.H)
+export(plotErrorBars.V)
+import(graphics)
+import(stats)
