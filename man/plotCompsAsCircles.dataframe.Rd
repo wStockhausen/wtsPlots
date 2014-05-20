@@ -1,0 +1,77 @@
+\name{plotCompsAsCircles.dataframe}
+\alias{plotCompsAsCircles.dataframe}
+\title{Plot size/age comps in a dataframe as circles.}
+\usage{
+plotCompsAsCircles.dataframe(dfr, zcols = "z", xcol = "x", ycol = "y",
+  hasCutPts = TRUE, transform = TRUE, overplot = FALSE, maxRadius = 0.5,
+  scale = NULL, xjit = 0, fg = "black", bg = "blue", lty = "solid",
+  transparency = 0.5, plotCohorts = FALSE, units = "data units",
+  main = NA, subtitle = "", xlims = NULL, ylims = NULL,
+  xlab = "years", ylab = "size", xaxt = NULL, yaxt = TRUE,
+  debug = FALSE)
+}
+\arguments{
+  \item{dfr}{: dataframe with columns xcol, ycol, zcols}
+
+  \item{xcol}{: dfr column name with x-axis positions}
+
+  \item{ycol}{: dfr column name with y-axis positions}
+
+  \item{zcols}{: dfr column names with values to plot as
+  circles}
+
+  \item{hasCutPts}{: flag indicating whether y-axis
+  positions are cut points}
+
+  \item{transform}{: flag (T/F) to scale circle size by
+  area rather than diameter}
+
+  \item{overplot}{: flag to draw on an existing plot}
+
+  \item{maxRadius=}{max radius for circles (axis?)}
+
+  \item{scale}{: overall scale factor}
+
+  \item{xjit}{: jitter applied to x-axis positions}
+
+  \item{fg}{: foreground color for circles}
+
+  \item{bg}{: background color for circles}
+
+  \item{lty}{: line type for circles}
+
+  \item{transparency}{: alpha (0-1) transparency for
+  circles}
+
+  \item{plotCohorts}{: flag (T/F) to plot cohorts}
+
+  \item{units}{: text to display as units}
+
+  \item{main}{: plot title}
+
+  \item{subtitle}{: plot subtitle}
+
+  \item{xlims}{: x-axis limits}
+
+  \item{ylims}{: y-axis limits}
+
+  \item{xlab}{: x-axis label}
+
+  \item{ylab}{: y-axis label}
+
+  \item{xaxt}{:}
+
+  \item{yaxt}{: flag (T/F)}
+
+  \item{debug}{: flag to print debugging info}
+}
+\value{
+value used to scale the circles.
+}
+\description{
+Function to plot size/age comps in a dataframe as circles.
+}
+\details{
+
+}
+

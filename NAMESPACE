@@ -1,0 +1,8 @@
+export(plotCompsAsCircles)
+export(plotCompsAsCircles.ByFactor)
+export(plotCompsAsCircles.dataframe)
+export(plotErrorBars.H)
+export(plotErrorBars.V)
+import(graphics)
+import(stats)
+importFrom(wtsUtilities,getFactorLevels)
