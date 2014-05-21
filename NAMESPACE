@@ -1,8 +1,14 @@
 export(plotCompsAsCircles)
+<<<<<<< HEAD
 export(plotCompsAsCircles.ByFactor)
 export(plotCompsAsCircles.dataframe)
+=======
+>>>>>>> 7abfa5c9d61f49a9954d596e07719143c7c0473a
 export(plotErrorBars.H)
 export(plotErrorBars.V)
 import(graphics)
 import(stats)
+<<<<<<< HEAD
 importFrom(wtsUtilities,getFactorLevels)
+=======
+>>>>>>> 7abfa5c9d61f49a9954d596e07719143c7c0473a
