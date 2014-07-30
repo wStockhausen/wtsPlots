@@ -7,4 +7,4 @@ Author: William Stockhausen
 Maintainer: Willia Stockhausen <william.stockhausen@noaa.gov>
 Description: Contains functions for various types of plots.
 License: MIT
-Depends: wtsUtilities
+Imports: wtsUtilities
