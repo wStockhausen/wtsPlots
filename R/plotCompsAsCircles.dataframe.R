@@ -1,5 +1,5 @@
 #'
-#' @title Plot size/age comps in a dataframe as circles.       
+#' @title Plot size/age comps in a dataframe as circles     
 #' 
 #' @description Function to plot size/age comps in a dataframe as circles.       
 #'
@@ -28,6 +28,8 @@
 #' @param xaxt : 
 #' @param yaxt : flag (T/F)
 #' @param debug : flag to print debugging info
+#' 
+#' @details calls plotCompsAsCircles() to make plot.
 #' 
 #' @return value used to scale the circles.
 #' 

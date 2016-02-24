@@ -14,9 +14,12 @@
 #'@param width - relative width of error bars
 #'@param ... - graphics parameters for segments (e.g., col, lty, lwd)
 #'
-#'@export
+#'@details Adds horizontal errors bars to current plot.
+#'
 #'@import graphics
 #'@import stats
+#'
+#'@export
 #'
 plotErrorBars.H<-function(x,
                         y,

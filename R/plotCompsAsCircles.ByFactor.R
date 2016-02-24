@@ -1,6 +1,7 @@
 #'
-#' @title Plot size/age comps as circles by levels of a factor in a dataframe. 
+#' @title Plot size/age comps as circles by levels of a factor in a dataframe 
 #'
+#' @description Function to plot size/age comps as circles by levels of a factor in a dataframe.
 #'
 #' @param dfr   : dataframe with columns xcol, ycol, zcols 
 #' @param xcol  : dfr column name with x-axis positions
@@ -27,6 +28,8 @@
 #' @param xaxt : 
 #' @param yaxt : flag (T/F)
 #' @param debug : flag to print debugging info
+#' 
+#' @details calls plotCompsAsCircles() to make plot.
 #' 
 #' @return value used to scale the circles.
 #' 
