@@ -72,4 +72,3 @@ Function to plot size/age comps in a dataframe as circles.
 \details{
 calls plotCompsAsCircles() to make plot.
 }
-

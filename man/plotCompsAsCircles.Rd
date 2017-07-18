@@ -70,4 +70,3 @@ if z is a matrix,
    y can be a matrix of dim(z) or
    y can be a vector of length nrow(z)
 }
-

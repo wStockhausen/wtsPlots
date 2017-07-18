@@ -34,4 +34,3 @@ Adds horizontal error bars to current plot.
 \details{
 Adds horizontal errors bars to current plot.
 }
-

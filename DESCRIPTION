@@ -1,12 +1,14 @@
 Package: wtsPlots
 Type: Package
 Title: Functions for creating various types of plots
-Version: 1.0.3
-Date: 2016-02-24
+Version: 2017.07.18
+Date: 2017-07-18
 Author: William Stockhausen
-Maintainer: Willia Stockhausen <william.stockhausen@noaa.gov>
+Maintainer: William Stockhausen <william.stockhausen@noaa.gov>
 Description: Contains functions for various types of plots.
 License: MIT
+Requires:
+    wtsUtilities
 Imports:
     wtsUtilities
-RoxygenNote: 5.0.1
+RoxygenNote: 6.0.1
