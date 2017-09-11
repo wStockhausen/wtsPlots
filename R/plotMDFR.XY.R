@@ -7,8 +7,7 @@
 #'@param x - column name for x-axis values
 #'@param value.var - column name for values to aggregate (value.var in cast)/plot on y-axis
 #'@param agg.formula - aggregation formula (left-hand side of cast formula)
-#'@param agg.function - aggregation function (fun.aggregate in cast)
-#'@param ... - further arguments passed to aggregating function
+#'@param agg.function - aggregation function (fun.aggregate in cast, default=wtsUtilities::Sum)
 #'@param colour - column name to which colour aesthetic is mapped
 #'@param fill - column nameto which fill aesthetic is mapped
 #'@param linetype - column name to which linetype aesthetic is mapped
@@ -50,8 +49,7 @@ plotMDFR.XY<-function(mdfr,
                        x=NULL,
                        value.var='val',
                        agg.formula=NULL,
-                       agg.function=sum,
-                       ...,
+                       agg.function=wtsUtilities::Sum,
                        colour=NULL,
                        fill=NULL,
                        linetype=NULL,
