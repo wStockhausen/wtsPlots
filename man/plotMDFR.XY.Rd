@@ -5,14 +5,15 @@
 \title{Plot melted dataframe using an xy-plot format.}
 \usage{
 plotMDFR.XY(mdfr, x = NULL, value.var = "val", agg.formula = NULL,
-  agg.function = sum, ..., colour = NULL, fill = NULL, linetype = NULL,
-  shape = NULL, dodge = 0, facet_grid = NULL, facet_wrap = NULL,
-  nrow = NULL, ncol = NULL, dir = "h", scales = "fixed", xlim = NULL,
-  ylim = NULL, xlab = "", ylab = "", units = "", lnscale = FALSE,
-  title = "", guideTitleColour = NULL, guideTitleFill = NULL,
-  guideTitleLineType = NULL, guideTitleShape = NULL, plotPoints = TRUE,
-  plotLines = TRUE, plotABline = FALSE, abline = list(intercept = 0, slope
-  = 1, colour = "black", linetype = 3, size = 1, alpha = 0.8),
+  agg.function = wtsUtilities::Sum, colour = NULL, fill = NULL,
+  linetype = NULL, shape = NULL, dodge = 0, facet_grid = NULL,
+  facet_wrap = NULL, nrow = NULL, ncol = NULL, dir = "h",
+  scales = "fixed", xlim = NULL, ylim = NULL, xlab = "", ylab = "",
+  units = "", lnscale = FALSE, title = "", guideTitleColour = NULL,
+  guideTitleFill = NULL, guideTitleLineType = NULL,
+  guideTitleShape = NULL, plotPoints = TRUE, plotLines = TRUE,
+  plotABline = FALSE, abline = list(intercept = 0, slope = 1, colour =
+  "black", linetype = 3, size = 1, alpha = 0.8),
   ggtheme = ggplot2::theme_gray(), showPlot = FALSE)
 }
 \arguments{
@@ -24,9 +25,7 @@ plotMDFR.XY(mdfr, x = NULL, value.var = "val", agg.formula = NULL,
 
 \item{agg.formula}{- aggregation formula (left-hand side of cast formula)}
 
-\item{agg.function}{- aggregation function (fun.aggregate in cast)}
-
-\item{...}{- further arguments passed to aggregating function}
+\item{agg.function}{- aggregation function (fun.aggregate in cast, default=wtsUtilities::Sum)}
 
 \item{colour}{- column name to which colour aesthetic is mapped}
 

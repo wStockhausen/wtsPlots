@@ -1,16 +1,18 @@
 Package: wtsPlots
 Type: Package
 Title: Functions for creating various types of plots
-Version: 2017.09.11
-Date: 2017-09-11
+Version: 2018.02.07
+Date: 2018-02-07
 Author: William Stockhausen
 Maintainer: William Stockhausen <william.stockhausen@noaa.gov>
 Description: Contains functions for various types of plots.
 License: MIT
 Requires:
-    wtsUtilities,
-    ggplot2,
-    reshape2
+    wtsUtilities (>= 2018.02.08)
+    ggplot2 (>= 2.2.1),
+    reshape2 (>= 1.4.3)
+Suggests:
+    tmap (>= 1.10)
 Imports:
     wtsUtilities,
     ggplot2
