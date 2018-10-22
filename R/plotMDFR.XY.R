@@ -116,7 +116,10 @@ plotMDFR.XY<-function(mdfr,
     if (!is.null(xlab))     p <- p + xlab(xlab);
     if (!is.null(ylb))      p <- p + ylab(ylb);
     if (!is.null(title))    p <- p + ggtitle(title);
-    if (!is.null(facet_grid)) p <- p + facet_grid(facet_grid,scales=scales);
+    if (!is.null(facet_grid)) {
+      if (packageVersion("ggplot2")<="2.2.1") {p <- p + facet_grid(as.formula(facet_grid),scales=scales);}
+      if (packageVersion("ggplot2")>="3.0.0") {p <- p + facet_grid(rows=as.formula(facet_grid),scales=scales);}
+    }
     if (!is.null(facet_wrap)) p <- p + facet_wrap(facet_wrap,nrow=nrow,ncol=ncol,dir=dir,scales=scales)
     if (!is.null(guideTitleColour))   p <- p + guides(colour  =guide_legend(title=guideTitleColour,override.aes=list(alpha=1.0,size=6,order=1)));
     if (!is.null(guideTitleFill))     p <- p + guides(fill    =guide_legend(title=guideTitleFill));

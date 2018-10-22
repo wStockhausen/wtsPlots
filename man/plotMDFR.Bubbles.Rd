@@ -9,8 +9,8 @@ plotMDFR.Bubbles(mdfr, x = NULL, y = NULL, value.var = "val",
   facet_grid = NULL, xlab = "", ylab = "", title = "",
   guideTitleSize = "", alpha = 0.5, maxBubbleSize = 6,
   useColourGradient = FALSE,
-  colourPalette = wtsUtilities::createColorPalette("jet", 100, alpha = alpha),
-  guideTitleColour = "", ggtheme = ggplot2::theme_gray(),
+  colourPalette = wtsUtilities::createColorPalette("jet", 100, alpha =
+  alpha), guideTitleColour = "", ggtheme = ggplot2::theme_gray(),
   showPlot = FALSE)
 }
 \arguments{

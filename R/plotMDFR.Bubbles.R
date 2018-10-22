@@ -71,7 +71,10 @@ plotMDFR.Bubbles<-function(mdfr,
     if (!is.null(xlab))     p <- p + xlab(xlab);
     if (!is.null(ylab))     p <- p + ylab(ylab);
     if (!is.null(title))    p <- p + ggtitle(title);
-    if (!is.null(facet_grid)) p <- p + facet_grid(facet_grid);
+    if (!is.null(facet_grid)) {
+      if (packageVersion("ggplot2")<="2.2.1") {p <- p + facet_grid(as.formula(facet_grid));}
+      if (packageVersion("ggplot2")>="3.0.0") {p <- p + facet_grid(rows=as.formula(facet_grid));}
+    }
     p <- p + guides(size=guide_legend(title=guideTitleSize,override.aes=list(alpha=1.0),order=1));
     if (!is.null(guideTitleColour)) {
         if (useColourGradient) {

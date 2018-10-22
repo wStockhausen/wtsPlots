@@ -4,13 +4,13 @@
 \alias{plotMDFR.BarLine}
 \title{Plot melted dataframe using a barchart/line-plot format.}
 \usage{
-plotMDFR.BarLine(mdfr, x = NULL, value.var = "val", agg.formula = NULL,
-  agg.function = sum, ..., colour = NULL, fill = NULL, linetype = NULL,
-  shape = NULL, faceting = NULL, xlab = "", ylab = "", units = "",
-  lnscale = FALSE, title = "", guideTitleColour = NULL,
-  guideTitleFill = NULL, guideTitleLineType = NULL,
-  guideTitleShape = NULL, ggtheme = ggplot2::theme_gray(),
-  showPlot = FALSE)
+plotMDFR.BarLine(mdfr, x = NULL, value.var = "val",
+  agg.formula = NULL, agg.function = sum, ..., colour = NULL,
+  fill = NULL, linetype = NULL, shape = NULL, faceting = NULL,
+  xlab = "", ylab = "", units = "", lnscale = FALSE, title = "",
+  guideTitleColour = NULL, guideTitleFill = NULL,
+  guideTitleLineType = NULL, guideTitleShape = NULL,
+  ggtheme = ggplot2::theme_gray(), showPlot = FALSE)
 }
 \arguments{
 \item{mdfr}{- melted dataframe}

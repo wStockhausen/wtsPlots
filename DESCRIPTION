@@ -1,8 +1,8 @@
 Package: wtsPlots
 Type: Package
 Title: Functions for creating various types of plots
-Version: 2018.03.07
-Date: 2018-03-07
+Version: 2018.08.26
+Date: 2018-08.26
 Author: William Stockhausen
 Maintainer: William Stockhausen <william.stockhausen@noaa.gov>
 Description: Contains functions for various types of plots.
@@ -14,4 +14,4 @@ Requires:
 Imports:
     wtsUtilities,
     ggplot2
-RoxygenNote: 6.0.1
+RoxygenNote: 6.1.0

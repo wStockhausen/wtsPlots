@@ -6,12 +6,12 @@
 \usage{
 plotCompsAsCircles.ByFactor(dfr = NULL, factor.name = NULL,
   factor.levels = NULL, zcol = "z", xcol = "year", ycol = "size",
-  transform = TRUE, overplot = FALSE, maxRadius = 0.5, scale = NULL,
-  xjit = 0, fg = c("black", "grey"), bg = c("blue", "green"),
-  lty = c("solid", "dotted"), transparency = 0.5, plotCohorts = FALSE,
-  units = "data units", main = NA, subtitle = "", xlims = NULL,
-  ylims = NULL, xlab = "", ylab = "", xaxt = TRUE, yaxt = TRUE,
-  debug = FALSE)
+  transform = TRUE, overplot = FALSE, maxRadius = 0.5,
+  scale = NULL, xjit = 0, fg = c("black", "grey"), bg = c("blue",
+  "green"), lty = c("solid", "dotted"), transparency = 0.5,
+  plotCohorts = FALSE, units = "data units", main = NA,
+  subtitle = "", xlims = NULL, ylims = NULL, xlab = "",
+  ylab = "", xaxt = TRUE, yaxt = TRUE, debug = FALSE)
 }
 \arguments{
 \item{dfr}{: dataframe with columns xcol, ycol, zcols}

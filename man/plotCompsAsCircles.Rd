@@ -8,8 +8,8 @@ plotCompsAsCircles(z = NULL, x = NULL, y = NULL, transform = TRUE,
   overplot = FALSE, maxRadius = 0.5, scale = NULL, fg = c("black",
   "black"), bg = c("green", "blue"), lty = c("solid", "solid"),
   transparency = 0.5, plotCohorts = FALSE, units = "data units",
-  main = NA, subtitle = NA, xlims = NULL, ylims = NULL, xaxt = TRUE,
-  yaxt = TRUE, xlab = NA, ylab = NA, ...)
+  main = NA, subtitle = NA, xlims = NULL, ylims = NULL,
+  xaxt = TRUE, yaxt = TRUE, xlab = NA, ylab = NA, ...)
 }
 \arguments{
 \item{z}{- vector or matrix of values to be plotted as circles}
