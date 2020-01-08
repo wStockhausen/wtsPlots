@@ -4,14 +4,28 @@
 \alias{plotMDFR.Bubbles}
 \title{Plot melted dataframe using a bubble plot format}
 \usage{
-plotMDFR.Bubbles(mdfr, x = NULL, y = NULL, value.var = "val",
-  agg.formula = NULL, agg.function = sum, ..., colour = NULL,
-  facet_grid = NULL, xlab = "", ylab = "", title = "",
-  guideTitleSize = "", alpha = 0.5, maxBubbleSize = 6,
+plotMDFR.Bubbles(
+  mdfr,
+  x = NULL,
+  y = NULL,
+  value.var = "val",
+  agg.formula = NULL,
+  agg.function = sum,
+  ...,
+  colour = NULL,
+  facet_grid = NULL,
+  xlab = "",
+  ylab = "",
+  title = "",
+  guideTitleSize = "",
+  alpha = 0.5,
+  maxBubbleSize = 6,
   useColourGradient = FALSE,
-  colourPalette = wtsUtilities::createColorPalette("jet", 100, alpha =
-  alpha), guideTitleColour = "", ggtheme = ggplot2::theme_gray(),
-  showPlot = FALSE)
+  colourPalette = wtsUtilities::createColorPalette("jet", 100, alpha = alpha),
+  guideTitleColour = "",
+  ggtheme = ggplot2::theme_gray(),
+  showPlot = FALSE
+)
 }
 \arguments{
 \item{x}{- column name for x-axis values}
@@ -36,7 +50,7 @@ plotMDFR.Bubbles(mdfr, x = NULL, y = NULL, value.var = "val",
 
 \item{title}{- plot title}
 
-\item{guideTitleSize}{- title for bubble size scale}
+\item{guideTitleSize}{- title for size guide}
 
 \item{alpha}{- transparency level}
 
@@ -51,8 +65,6 @@ plotMDFR.Bubbles(mdfr, x = NULL, y = NULL, value.var = "val",
 \item{ggtheme}{- ggplot2 theme for plot (default=\code{ggplot2::theme_gray()})}
 
 \item{showPlot}{- flag to show plot immediately}
-
-\item{guideTitleSize}{- title for size guide}
 }
 \value{
 ggplot2 object

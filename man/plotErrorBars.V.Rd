@@ -4,9 +4,18 @@
 \alias{plotErrorBars.V}
 \title{Add vertical error bars to current plot}
 \usage{
-plotErrorBars.V(x, y = NULL, upper = NULL, lower = NULL,
-  sigma = NULL, cv = NULL, CI = 0.8, lognormal = FALSE,
-  width = 1, ...)
+plotErrorBars.V(
+  x,
+  y = NULL,
+  upper = NULL,
+  lower = NULL,
+  sigma = NULL,
+  cv = NULL,
+  CI = 0.8,
+  lognormal = FALSE,
+  width = 1,
+  ...
+)
 }
 \arguments{
 \item{x}{- vector of x coordinates or matrix w/ columns 1 & 2 taken as x,y}

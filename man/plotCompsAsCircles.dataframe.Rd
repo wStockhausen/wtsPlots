@@ -4,13 +4,33 @@
 \alias{plotCompsAsCircles.dataframe}
 \title{Plot size/age comps in a dataframe as circles}
 \usage{
-plotCompsAsCircles.dataframe(dfr, zcols = "z", xcol = "x",
-  ycol = "y", hasCutPts = TRUE, transform = TRUE, overplot = FALSE,
-  maxRadius = 0.5, scale = NULL, xjit = 0, fg = "black",
-  bg = "blue", lty = "solid", transparency = 0.5,
-  plotCohorts = FALSE, units = "data units", main = NA,
-  subtitle = "", xlims = NULL, ylims = NULL, xlab = "years",
-  ylab = "size", xaxt = NULL, yaxt = TRUE, debug = FALSE)
+plotCompsAsCircles.dataframe(
+  dfr,
+  zcols = "z",
+  xcol = "x",
+  ycol = "y",
+  hasCutPts = TRUE,
+  transform = TRUE,
+  overplot = FALSE,
+  maxRadius = 0.5,
+  scale = NULL,
+  xjit = 0,
+  fg = "black",
+  bg = "blue",
+  lty = "solid",
+  transparency = 0.5,
+  plotCohorts = FALSE,
+  units = "data units",
+  main = NA,
+  subtitle = "",
+  xlims = NULL,
+  ylims = NULL,
+  xlab = "years",
+  ylab = "size",
+  xaxt = NULL,
+  yaxt = TRUE,
+  debug = FALSE
+)
 }
 \arguments{
 \item{dfr}{: dataframe with columns xcol, ycol, zcols}

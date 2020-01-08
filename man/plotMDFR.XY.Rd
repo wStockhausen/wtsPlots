@@ -4,18 +4,42 @@
 \alias{plotMDFR.XY}
 \title{Plot melted dataframe using an xy-plot format.}
 \usage{
-plotMDFR.XY(mdfr, x = NULL, value.var = "val", agg.formula = NULL,
-  agg.function = wtsUtilities::Sum, colour = NULL, fill = NULL,
-  linetype = NULL, shape = NULL, dodge = 0, facet_grid = NULL,
-  facet_wrap = NULL, nrow = NULL, ncol = NULL, dir = "h",
-  scales = "fixed", xlim = NULL, ylim = NULL, xlab = "",
-  ylab = "", units = "", lnscale = FALSE, title = "",
-  guideTitleColour = NULL, guideTitleFill = NULL,
-  guideTitleLineType = NULL, guideTitleShape = NULL,
-  plotPoints = TRUE, plotLines = TRUE, plotABline = FALSE,
-  abline = list(intercept = 0, slope = 1, colour = "black", linetype = 3,
-  size = 1, alpha = 0.8), ggtheme = ggplot2::theme_gray(),
-  showPlot = FALSE)
+plotMDFR.XY(
+  mdfr,
+  x = NULL,
+  value.var = "val",
+  agg.formula = NULL,
+  agg.function = wtsUtilities::Sum,
+  colour = NULL,
+  fill = NULL,
+  linetype = NULL,
+  shape = NULL,
+  dodge = 0,
+  facet_grid = NULL,
+  facet_wrap = NULL,
+  nrow = NULL,
+  ncol = NULL,
+  dir = "h",
+  scales = "fixed",
+  xlim = NULL,
+  ylim = NULL,
+  xlab = "",
+  ylab = "",
+  units = "",
+  lnscale = FALSE,
+  title = "",
+  guideTitleColour = NULL,
+  guideTitleFill = NULL,
+  guideTitleLineType = NULL,
+  guideTitleShape = NULL,
+  plotPoints = TRUE,
+  plotLines = TRUE,
+  plotABline = FALSE,
+  abline = list(intercept = 0, slope = 1, colour = "black", linetype = 3, size = 1,
+    alpha = 0.8),
+  ggtheme = ggplot2::theme_gray(),
+  showPlot = FALSE
+)
 }
 \arguments{
 \item{mdfr}{- melted dataframe}

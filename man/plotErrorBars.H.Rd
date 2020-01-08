@@ -4,8 +4,18 @@
 \alias{plotErrorBars.H}
 \title{Add horizontal error bars to current plot}
 \usage{
-plotErrorBars.H(x, y, upper = NULL, lower = NULL, sigma = NULL,
-  cv = NULL, CI = 0.95, lognormal = FALSE, width = 1, ...)
+plotErrorBars.H(
+  x,
+  y,
+  upper = NULL,
+  lower = NULL,
+  sigma = NULL,
+  cv = NULL,
+  CI = 0.95,
+  lognormal = FALSE,
+  width = 1,
+  ...
+)
 }
 \arguments{
 \item{x}{- vector of x coordinates or matrix w/ columns 1 & 2 taken as x,y}
