@@ -14,7 +14,6 @@ plotMDFR.XY(
   fill = NULL,
   linetype = NULL,
   shape = NULL,
-  dodge = 0,
   facet_grid = NULL,
   facet_wrap = NULL,
   nrow = NULL,
@@ -33,10 +32,13 @@ plotMDFR.XY(
   guideTitleLineType = NULL,
   guideTitleShape = NULL,
   plotPoints = TRUE,
+  points = list(alpha = 1, size = 1, dodge = 0),
   plotLines = TRUE,
   plotABline = FALSE,
   abline = list(intercept = 0, slope = 1, colour = "black", linetype = 3, size = 1,
     alpha = 0.8),
+  plotViolins = FALSE,
+  violins = list(scale = "count", stat = "ydensity", dodge = 0, alpha = 1),
   ggtheme = ggplot2::theme_gray(),
   showPlot = FALSE
 )
@@ -59,8 +61,6 @@ plotMDFR.XY(
 \item{linetype}{- column name to which linetype aesthetic is mapped}
 
 \item{shape}{-  column name to which shape aesthetic is mapped}
-
-\item{dodge}{- width to dodge overlapping points/lines}
 
 \item{facet_grid}{- faceting formula for facet_grid'ing}
 
@@ -98,11 +98,17 @@ plotMDFR.XY(
 
 \item{plotPoints}{- flag to plot points}
 
+\item{points}{- list with elements alpha=1.0,size=1.0,dodge=0.0}
+
 \item{plotLines}{- flag to plot lines}
 
 \item{plotABline}{- flag to plot a straight line}
 
 \item{abline}{- list w/ components intercept, slope, colour, size, linetype, alpha describing line to plots}
+
+\item{plotViolins}{- flag to plot violins}
+
+\item{violins}{- list with elements scale="count",stat="ydensity",dodge=0.0,alpha=1.0 (see \code{ggplot2::geom_violin} for details)}
 
 \item{ggtheme}{- ggplot2 theme for plot (default=\code{ggplot2::theme_gray()})}
 

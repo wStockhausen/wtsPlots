@@ -12,7 +12,6 @@
 #'@param fill - column nameto which fill aesthetic is mapped
 #'@param linetype - column name to which linetype aesthetic is mapped
 #'@param shape -  column name to which shape aesthetic is mapped
-#'@param dodge - width to dodge overlapping points/lines
 #'@param facet_grid - faceting formula for facet_grid'ing
 #'@param facet_wrap - faceting formula for facet_wrap'ing
 #'@param nrow - number of rows when using facet_wrap
@@ -31,9 +30,12 @@
 #'@param guideTitleLineType - title for linetype guide
 #'@param guideTitleShape - title for shape guide
 #'@param plotPoints - flag to plot points
+#'@param points - list with elements alpha=1.0,size=1.0,dodge=0.0
 #'@param plotLines - flag to plot lines
 #'@param plotABline - flag to plot a straight line
 #'@param abline - list w/ components intercept, slope, colour, size, linetype, alpha describing line to plots
+#'@param plotViolins - flag to plot violins
+#'@param violins - list with elements scale="count",stat="ydensity",dodge=0.0,alpha=1.0 (see \code{ggplot2::geom_violin} for details)
 #'@param ggtheme - ggplot2 theme for plot (default=\code{ggplot2::theme_gray()})
 #'@param showPlot - flag to show plot immediately
 #'
@@ -54,7 +56,6 @@ plotMDFR.XY<-function(mdfr,
                        fill=NULL,
                        linetype=NULL,
                        shape=NULL,
-                       dodge=0.0,
                        facet_grid=NULL,
                        facet_wrap=NULL,
                        nrow=NULL,
@@ -73,9 +74,12 @@ plotMDFR.XY<-function(mdfr,
                        guideTitleLineType=NULL,
                        guideTitleShape=NULL,
                        plotPoints=TRUE,
+                       points=list(alpha=1.0,size=1.0,dodge=0.0),
                        plotLines=TRUE,
                        plotABline=FALSE,
                        abline=list(intercept=0,slope=1,colour='black',linetype=3,size=1,alpha=0.8),
+                       plotViolins=FALSE,
+                       violins=list(scale="count",stat="ydensity",dodge=0.0,alpha=1.0),
                        ggtheme=ggplot2::theme_gray(),
                        showPlot=FALSE
                        ){
@@ -101,11 +105,21 @@ plotMDFR.XY<-function(mdfr,
     }
     
     #plot resulting dataframe
-    pd<-position_dodge(width=dodge);
-    p <- ggplot(aes_string(x=x,y='.',colour=colour,fill=fill,linetype=linetype,shape=shape),data=mdfr);
+    if (plotViolins) mdfr[["group"]]<-factor(paste0(mdfr[[x]],mdfr[[colour]],mdfr[[fill]]));
+    p <- ggplot(mapping=aes_string(x=x,y='.',colour=colour,fill=fill,linetype=linetype,shape=shape),data=mdfr);
     p <- p + ggtheme;
-    if (plotPoints) p <- p + geom_point(position=pd);
-    if (plotLines)  p <- p + geom_line(position=pd);
+    if (plotViolins) {
+      p <- p + geom_violin(position=position_dodge(ifelse(is.null(violins$dodge),0,violins$dodge)),
+                            stat=ifelse(is.null(violins$stat),"ydensity",violins$stat),
+                            scale=ifelse(is.null(violins$scale),"width",violins$scale),
+                            mapping=aes_string(group="group",fill=fill,colour=colour),
+                            alpha=ifelse(is.null(violins$alpha),1.0,violins$alpha),
+                            inherit.aes=TRUE);
+    }
+    if (plotPoints)  p <- p + geom_point(position=position_dodge(ifelse(is.null(points$dodge),0,points$dodge)),
+                                         size=ifelse(is.null(points$size),1.0,points$size),
+                                         alpha=ifelse(is.null(points$alpha),1.0,points$alpha));
+    if (plotLines)   p <- p + geom_line();
     if (plotABline){
         p <- p + geom_abline(intercept=abline$intercept,slope=abline$slope,
                              colour=abline$colour,linetype=abline$linetype,
