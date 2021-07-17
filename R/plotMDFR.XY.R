@@ -45,6 +45,10 @@
 #'
 #'@import ggplot2
 #'
+#'@importFrom grDevices col2rgb
+#'@importFrom grDevices rgb
+#'@importFrom utils packageVersion
+#'
 #'@export
 #'
 plotMDFR.XY<-function(mdfr,

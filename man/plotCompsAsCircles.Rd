@@ -12,6 +12,7 @@ plotCompsAsCircles(
   overplot = FALSE,
   maxRadius = 0.5,
   scale = NULL,
+  xjit = 0,
   fg = c("black", "black"),
   bg = c("green", "blue"),
   lty = c("solid", "solid"),
@@ -25,8 +26,7 @@ plotCompsAsCircles(
   xaxt = TRUE,
   yaxt = TRUE,
   xlab = NA,
-  ylab = NA,
-  ...
+  ylab = NA
 )
 }
 \arguments{
@@ -43,6 +43,8 @@ plotCompsAsCircles(
 \item{maxRadius}{- max radius (in data units) to allow}
 
 \item{scale}{- scale factor to normalize z values by}
+
+\item{xjit}{: jitter applied to x-axis positions}
 
 \item{fg}{- vector of colors for circle outlines ("black","grey"),}
 

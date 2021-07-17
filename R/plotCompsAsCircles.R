@@ -10,6 +10,7 @@
 #'@param overplot - flag (T/F) to plot over an existing plot
 #'@param maxRadius - max radius (in data units) to allow
 #'@param scale - scale factor to normalize z values by 
+#'@param xjit : jitter applied to x-axis positions
 #'@param fg - vector of colors for circle outlines ("black","grey"),
 #'@param bg - vector of colors for circle fills ("blue","green"),
 #'@param lty - vector of line types for circle outlines ("solid","dotted") to use
@@ -37,8 +38,9 @@
 #'    y can be a matrix of dim(z) or
 #'    y can be a vector of length nrow(z)
 #'
-#'@export
 #'@import graphics
+#'
+#'@export
 #'
 plotCompsAsCircles<-function(z=NULL,
                              x=NULL,
@@ -47,6 +49,7 @@ plotCompsAsCircles<-function(z=NULL,
                              overplot=FALSE,
                              maxRadius=0.5,
                              scale=NULL,
+                             xjit=0,
                              fg=c("black","black"),
                              bg=c("green","blue"),
                              lty=c("solid","solid"),
@@ -60,8 +63,7 @@ plotCompsAsCircles<-function(z=NULL,
                              xaxt=TRUE,
                              yaxt=TRUE,
                              xlab=NA,
-                             ylab=NA,
-                               ...) {
+                             ylab=NA) {
   
     if (xaxt) {xaxt<-"s";} else {xaxt<-"n"}
     if (yaxt) {yaxt<-"s";} else {yaxt<-"n"}
@@ -169,7 +171,7 @@ plotCompsAsCircles<-function(z=NULL,
     }
     #plot positive values as symbols
     if (any(r>0,nr.rm=TRUE)){
-        bgc<-rgb(t(col2rgb(bg[1])),alpha=255*transparency,maxColorValue=255);
+        bgc<-grDevices::rgb(t(grDevices::col2rgb(bg[1])),alpha=255*transparency,maxColorValue=255);
         crcs<-r[r>0];
         if (!is.infinite(max(crcs,na.rm=TRUE))){
             cat("Positive scale = ",maxRadius*max(crcs,na.rm=TRUE),"\n")
@@ -179,7 +181,7 @@ plotCompsAsCircles<-function(z=NULL,
         
     #plot negative values as symbols
     if (any(r<0,na.rm=TRUE)){
-        bgc<-rgb(t(col2rgb(bg[2])),alpha=255*transparency,maxColorValue=255);
+        bgc<-grDevices::rgb(t(grDevices::col2rgb(bg[2])),alpha=255*transparency,maxColorValue=255);
         crcs<-abs(r[r<0]);
         if (length(crcs)>0){
             cat("Negative scale = ",maxRadius*max(crcs,na.rm=TRUE),"\n")

@@ -10,7 +10,7 @@
 #' @param hasCutPts : flag indicating whether y-axis positions are cut points 
 #' @param transform : flag (T/F) to scale circle size by area rather than diameter
 #' @param overplot : flag to draw on an existing plot
-#' @param maxRadius= max radius for circles (axis?)
+#' @param maxRadius : max radius for circles (axis?)
 #' @param scale : overall scale factor
 #' @param xjit : jitter applied to x-axis positions
 #' @param fg : foreground color for circles

@@ -80,8 +80,8 @@ plotMDFR.BarLine<-function(mdfr,
     
     #plot resulting dataframe
     p <- ggplot(aes_string(x=x,y='.',colour=colour,fill=fill,linetype=linetype,shape=shape),data=mdfr);
-    p <- p + geom_bar(aes(x=x,y='.',fill=ms_sc),data=mdfr[mdfr$modeltype=='rsim'],stat="identity",position='identity',alpha=0.5);
-    p <- p + geom_line(aes(x=x,y='.',colour=ms_sc),data=dfrp[(dfrp$modeltype=='tcsam'),],size=1);
+    p <- p + geom_bar(aes(x=x,y='.',fill=fill),data=mdfr[mdfr$modeltype=='rsim'],stat="identity",position='identity',alpha=0.5);
+    p <- p + geom_line(aes(x=x,y='.',colour=colour),data=mdfr[(mdfr$modeltype=='tcsam'),],size=1);
     p <- p + ggtheme;
 #    print(p);
     if (!is.null(xlab))     p <- p + xlab(xlab);

@@ -4,13 +4,14 @@
 #' @description Function to plot size/age comps as circles by levels of a factor in a dataframe.
 #'
 #' @param dfr   : dataframe with columns xcol, ycol, zcols 
+#' @param factor.name : 
+#' @param factor.levels : 
+#' @param zcol  : dfr column name with values to plot as circles
 #' @param xcol  : dfr column name with x-axis positions
 #' @param ycol  : dfr column name with y-axis positions
-#' @param zcols : dfr column names with values to plot as circles
-#' @param hasCutPts : flag indicating whether y-axis positions are cut points 
 #' @param transform : flag (T/F) to scale circle size by area rather than diameter
 #' @param overplot : flag to draw on an existing plot
-#' @param maxRadius= max radius for circles (axis?)
+#' @param maxRadius : max radius for circles (axis?)
 #' @param scale : overall scale factor
 #' @param xjit : jitter applied to x-axis positions
 #' @param fg : foreground color for circles
@@ -67,7 +68,7 @@ plotCompsAsCircles.ByFactor<-function(dfr=NULL,
   if (is.null(factor.levels)){
     factor.levels<-getFactorLevels(dfr,factor.name);
     factor.levels<-factor.levels[[factor.name]];
-    cat("factor levels:",fator.levels,"\n")
+    cat("factor levels:",factor.levels,"\n")
   }
   
   #plot factor levels

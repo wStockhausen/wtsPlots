@@ -36,6 +36,12 @@ plotCompsAsCircles.ByFactor(
 \arguments{
 \item{dfr}{: dataframe with columns xcol, ycol, zcols}
 
+\item{factor.name}{:}
+
+\item{factor.levels}{:}
+
+\item{zcol}{: dfr column name with values to plot as circles}
+
 \item{xcol}{: dfr column name with x-axis positions}
 
 \item{ycol}{: dfr column name with y-axis positions}
@@ -43,6 +49,8 @@ plotCompsAsCircles.ByFactor(
 \item{transform}{: flag (T/F) to scale circle size by area rather than diameter}
 
 \item{overplot}{: flag to draw on an existing plot}
+
+\item{maxRadius}{: max radius for circles (axis?)}
 
 \item{scale}{: overall scale factor}
 
@@ -77,12 +85,6 @@ plotCompsAsCircles.ByFactor(
 \item{yaxt}{: flag (T/F)}
 
 \item{debug}{: flag to print debugging info}
-
-\item{zcols}{: dfr column names with values to plot as circles}
-
-\item{hasCutPts}{: flag indicating whether y-axis positions are cut points}
-
-\item{maxRadius=}{max radius for circles (axis?)}
 }
 \value{
 value used to scale the circles.

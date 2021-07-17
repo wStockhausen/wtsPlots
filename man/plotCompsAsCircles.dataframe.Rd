@@ -47,6 +47,8 @@ plotCompsAsCircles.dataframe(
 
 \item{overplot}{: flag to draw on an existing plot}
 
+\item{maxRadius}{: max radius for circles (axis?)}
+
 \item{scale}{: overall scale factor}
 
 \item{xjit}{: jitter applied to x-axis positions}
@@ -80,8 +82,6 @@ plotCompsAsCircles.dataframe(
 \item{yaxt}{: flag (T/F)}
 
 \item{debug}{: flag to print debugging info}
-
-\item{maxRadius=}{max radius for circles (axis?)}
 }
 \value{
 value used to scale the circles.

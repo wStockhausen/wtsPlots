@@ -28,6 +28,8 @@ plotMDFR.Bubbles(
 )
 }
 \arguments{
+\item{mdfr}{- melted dataframe}
+
 \item{x}{- column name for x-axis values}
 
 \item{y}{- column name for y-axis values}

@@ -3,6 +3,7 @@
 #'
 #' @description Function to plot a melted dataframe using a bubble plot format.
 #'
+#'@param mdfr - melted dataframe
 #'@param x - column name for x-axis values
 #'@param y - column name for y-axis values
 #'@param value.var - column name for values to aggregate (value.var in cast)/plot as circles
