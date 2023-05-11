@@ -35,8 +35,8 @@ plotMDFR.XY(
   points = list(alpha = 1, size = 1, dodge = 0),
   plotLines = TRUE,
   plotABline = FALSE,
-  abline = list(intercept = 0, slope = 1, colour = "black", linetype = 3, size = 1,
-    alpha = 0.8),
+  abline = list(intercept = 0, slope = 1, colour = "black", linetype = 3, size = 1, alpha
+    = 0.8),
   plotViolins = FALSE,
   violins = list(scale = "count", stat = "ydensity", dodge = 0, alpha = 1),
   ggtheme = ggplot2::theme_gray(),
