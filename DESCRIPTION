@@ -1,8 +1,8 @@
 Package: wtsPlots
 Type: Package
 Title: Functions for creating various types of plots
-Version: 2023.05.11
-Date: 2023-05-11
+Version: 2023.06.01
+Date: 2023-06-01
 Author: William Stockhausen
 Maintainer: William Stockhausen <william.stockhausen@noaa.gov>
 Description: Contains functions for various types of plots.
@@ -12,8 +12,13 @@ Requires:
     ggplot2 (>= 2.2.1),
     reshape2 (>= 1.4.3)
 Imports:
-    wtsUtilities,
+    dplyr,
     ggplot2,
-    reshape2
+    grid,
+    gtable,
+    reshape2,
+    rlang,
+    wtsUtilities,
 RoxygenNote: 7.2.3
+Roxygen2: list(markdown=TRUE)
 URL: https://github.com/wStockhausen/wtsPlots
