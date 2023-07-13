@@ -30,7 +30,7 @@
 #' @param yaxt : flag (T/F)
 #' @param debug : flag to print debugging info
 #' 
-#' @details calls plotCompsAsCircles() to make plot.
+#' @details calls [plotCompsAsCircles()] to make plot.
 #' 
 #' @return value used to scale the circles.
 #' 

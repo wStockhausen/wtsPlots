@@ -93,5 +93,5 @@ value used to scale the circles.
 Function to plot size/age comps as circles by levels of a factor in a dataframe.
 }
 \details{
-calls plotCompsAsCircles() to make plot.
+calls [plotCompsAsCircles()] to make plot.
 }
