@@ -2,26 +2,32 @@
 % Please edit documentation in R/plotRStanMCMC.R
 \name{plotRStanMCMC}
 \alias{plotRStanMCMC}
-\title{Make diagnostic plots for a parameter in an [rstan](https://mc-stan.org/) mcmc simulation}
+\title{Make diagnostic plots for a parameter in an \href{https://mc-stan.org/}{rstan} mcmc simulation}
 \usage{
 plotRStanMCMC(mcmc, var, label = var)
 }
 \arguments{
-\item{mcmc}{- [rstan](https://mc-stan.org/) stanfit object from running [rstan::sampling()] or [tmbstan::tmbstan()]}
+\item{mcmc}{\itemize{
+\item \href{https://mc-stan.org/}{rstan} stanfit object from running \code{\link[rstan:stanmodel-method-sampling]{rstan::sampling()}} or \code{\link[tmbstan:tmbstan]{tmbstan::tmbstan()}}
+}}
 
-\item{var}{- name of variable to plot}
+\item{var}{\itemize{
+\item name of variable to plot
+}}
 
-\item{label}{- label to use for variable (default=\code{var})}
+\item{label}{\itemize{
+\item label to use for variable (default=\code{var})
+}}
 }
 \value{
-a ggplot2::gg object (or NULL if the [rstan](https://mc-stan.org/) package is not installed.)
+a ggplot2::gg object (or NULL if the \href{https://mc-stan.org/}{rstan} package is not installed.)
 }
 \description{
-Function to make diagnostic plots for a parameter in an [rstan](https://mc-stan.org/) mcmc simulation.
+Function to make diagnostic plots for a parameter in an \href{https://mc-stan.org/}{rstan} mcmc simulation.
 }
 \details{
-Requires the [rstan](https://mc-stan.org/) and [cowplot] packages. Combines plots from running [rstan::stan_trace()], [rstan::stan_ac()] (both ACF and PACF plots),
-[rstan::stan_hist()], and [rstan::density()] for the model parameter identified by \code{var} Plots 
-are combined using [cowplot::plot_grid()]. The \code{label} input can be specified to provide a 
+Requires the \href{https://mc-stan.org/}{rstan} and \link{cowplot} packages. Combines plots from running \code{\link[rstan:stan_plot]{rstan::stan_trace()}}, \code{\link[rstan:stan_plot]{rstan::stan_ac()}} (both ACF and PACF plots),
+\code{\link[rstan:stan_plot]{rstan::stan_hist()}}, and \code{\link[rstan:stan_plot]{rstan::stan_dens()}} for the model parameter identified by \code{var} Plots
+are combined using \code{\link[cowplot:plot_grid]{cowplot::plot_grid()}}. The \code{label} input can be specified to provide a
 more informative name for the plotted parameter.
 }

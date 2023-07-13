@@ -10,11 +10,13 @@
 #' @return a ggplot2::gg object (or NULL if the [rstan](https://mc-stan.org/) package is not installed.)
 #' 
 #' @details Requires the [rstan](https://mc-stan.org/) and [cowplot] packages. Combines plots from running [rstan::stan_trace()], [rstan::stan_ac()] (both ACF and PACF plots),
-#' [rstan::stan_hist()], and [rstan::density()] for the model parameter identified by \code{var} Plots 
+#' [rstan::stan_hist()], and [rstan::stan_dens()] for the model parameter identified by \code{var} Plots 
 #' are combined using [cowplot::plot_grid()]. The \code{label} input can be specified to provide a 
 #' more informative name for the plotted parameter. 
 #' 
 #' @import ggplot2
+#' 
+#' @md 
 #' 
 #' @export
 #' 
