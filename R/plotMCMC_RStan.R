@@ -20,7 +20,7 @@
 #' 
 #' @export
 #' 
-plotRStanMCMC<-function(mcmc,var,label=var){
+plotMCMC_RStan<-function(mcmc,var,label=var){
   if (requireNamespace("rstan", quietly = TRUE)&requireNamespace("cowplot", quietly = TRUE)){
     if (class(mcmc)[1]!="stanfit") 
       stop("'mcmc' musst be a 'rstan::stanfit' object.");
@@ -55,7 +55,7 @@ plotRStanMCMC<-function(mcmc,var,label=var){
     rw3 = cowplot::plot_grid(p4,p5,nrow=1,labels=c("histogram","density"),
                              hjust=-0.1,vjust=0.8,label_size=12);
     pg = cowplot::plot_grid(p1,rw2,rw3,ncol=1,
-                            labels=c(paste0(label,": trace plot","","")),
+                            labels=c(paste0(label,": trace plot"),"",""),
                             hjust=-0.1,vjust=0.9,label_size=12);
     return(pg);
   } else {
