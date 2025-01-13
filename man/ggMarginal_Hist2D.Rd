@@ -26,6 +26,8 @@ ggMarginal_Hist2D(
   groupColour = FALSE,
   groupFill = FALSE,
   showIntermediates = FALSE,
+  addValues = TRUE,
+  addGrid = TRUE,
   testing = FALSE
 )
 }
@@ -75,6 +77,10 @@ be a character or factor variable. See examples below.}
 plots will be grouped according to the variable mapped to \code{colour} in the
 scatter plot. The variable mapped to \code{colour} in the scatter plot must
 be a character or factor variable.}
+
+\item{addValues}{- flag to add histograam values to 2d matrix? (default = FALSE)}
+
+\item{addGrid}{- flag to add grids to histograms (default=TRUE)}
 
 \item{testing}{- flag (T/F) to include}
 

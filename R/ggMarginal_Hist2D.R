@@ -34,6 +34,8 @@
 #' plots will be grouped according to the variable mapped to \code{colour} in the
 #' scatter plot. The variable mapped to \code{colour} in the scatter plot must
 #' be a character or factor variable.
+#' @param addValues - flag to add histograam values to 2d matrix? (default = FALSE)
+#' @param addGrid - flag to add grids to histograms (default=TRUE)
 #' @param testing - flag (T/F) to include 
 #' 
 #' @return If \code{testing} is false, a \code{ggGTbl} object that can be printed using S3 dispatch with \code{print}.
@@ -88,6 +90,8 @@ ggMarginal_Hist2D <- function(
                        groupColour = FALSE, 
                        groupFill = FALSE,
                        showIntermediates=FALSE,
+                       addValues=TRUE,
+                       addGrid=TRUE,
                        testing=FALSE) {
   if (length(bins)==1)      bins=rep(bins,2);
   if (length(binwidths)==1) binwidths=rep(binwidths,2);
@@ -109,6 +113,15 @@ ggMarginal_Hist2D <- function(
   p2d = p2d +
         stat_bin_2d(bins=bins,binwidth=binwidths,drop=TRUE) + 
         fill_scale; 
+  if (addGrid) {
+    p2d = p2d + 
+            stat_bin_2d(bins=bins,binwidth=binwidths,drop=TRUE,fill=NA,colour="white");
+  }
+  if (addValues){
+    p2d = p2d + 
+            stat_bin_2d(aes(label=ggplot2::after_stat(.data[[after_stat_var]])),
+                        geom="text",bins=bins,binwidth=binwidths,drop=TRUE,fill=NA,colour="white");
+  }
   p2d = p2d + do.call(scale_x_continuous,xparams);
   p2d = p2d + do.call(scale_y_continuous,yparams);
   p2d = p2d + 
@@ -143,6 +156,15 @@ ggMarginal_Hist2D <- function(
   }
   px = px + geom_histogram(bins=bins[1],binwidth=binwidths[1],boundary=0,
                            alpha=0.5,fill="grey50");
+  if (addGrid) 
+    px = px + geom_histogram(bins=bins[1],binwidth=binwidths[1],boundary=0,
+                           alpha=0.5,fill=NA,colour="white");
+  if (addValues){
+    px = px + 
+           stat_bin(aes(label=ggplot2::after_stat(.data[[after_stat_var]])),
+                    geom="text",bins=bins[1],binwidth=binwidths[1],boundary=0,
+                    colour="white",vjust=1);
+  }
   px = px + do.call(scale_x_continuous,xparams);
   px = px + wtsPlots::getStdTheme();
   if (showIntermediates) print(px);
@@ -157,6 +179,15 @@ ggMarginal_Hist2D <- function(
   }
   py = py + geom_histogram(bins=bins[2],binwidth=binwidths[2],boundary=0,
                            alpha=0.5,fill="grey50");
+  if (addGrid) 
+    py = py + geom_histogram(bins=bins[2],binwidth=binwidths[2],boundary=0,
+                           alpha=0.5,fill=NA,colour="white");
+  if (addValues){
+    py = py + 
+           stat_bin(aes(label=ggplot2::after_stat(.data[[after_stat_var]])),
+                    geom="text",bins=bins[2],binwidth=binwidths[2],boundary=0,
+                    colour="white",vjust=1,angle=270);
+  }
   py = py + do.call(scale_y_continuous,yparams);
   py = py + wtsPlots::getStdTheme();
   if (showIntermediates) print(py);

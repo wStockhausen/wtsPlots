@@ -26,7 +26,8 @@ plotMCMC_Diagnostics<-function(mcmc,var,label=var){
   if (requireNamespace("bayesplot", quietly = TRUE) & 
       requireNamespace("cowplot",   quietly = TRUE) & 
       requireNamespace("posterior", quietly = TRUE)){
-    rHat = formatC(bayesplot::rhat(mcmc,var),digits=3,format="f");
+    rHat = formatC(bayesplot::rhat(posterior::extract_variable_matrix(mcmc,var)),
+                   digits=3,format="f");
     ESS  = formatC(posterior::ess_tail(posterior::extract_variable_matrix(mcmc,var)),
                    digits=0,format="f",big.mark=",");
     p1 = bayesplot::mcmc_trace(mcmc,pars=var,np=bayesplot::nuts_params(mcmc)) + 
