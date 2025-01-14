@@ -163,7 +163,7 @@ ggMarginal_Hist2D <- function(
     px = px + 
            stat_bin(aes(label=ggplot2::after_stat(.data[[after_stat_var]])),
                     geom="text",bins=bins[1],binwidth=binwidths[1],boundary=0,
-                    colour="white",vjust=1);
+                    colour="black",vjust=1);
   }
   px = px + do.call(scale_x_continuous,xparams);
   px = px + wtsPlots::getStdTheme();
@@ -186,7 +186,7 @@ ggMarginal_Hist2D <- function(
     py = py + 
            stat_bin(aes(label=ggplot2::after_stat(.data[[after_stat_var]])),
                     geom="text",bins=bins[2],binwidth=binwidths[2],boundary=0,
-                    colour="white",vjust=1,angle=270);
+                    colour="black",vjust=1,angle=270);
   }
   py = py + do.call(scale_y_continuous,yparams);
   py = py + wtsPlots::getStdTheme();
