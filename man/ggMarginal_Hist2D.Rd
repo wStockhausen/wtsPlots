@@ -8,6 +8,7 @@ ggMarginal_Hist2D(
   data,
   x,
   y,
+  weight = NULL,
   size = 5,
   after_stat_var = c("ncount", "count", "density", "ndensity"),
   hist_scale = c("arithmetic", "log10", "4th-root"),
@@ -37,6 +38,8 @@ ggMarginal_Hist2D(
 \item{x}{The name of the variable along the x axis.}
 
 \item{y}{The name of the variable along the y axis.}
+
+\item{weight}{(optional) name of the variable to use to weight observations}
 
 \item{size}{Integer describing the relative size of the marginal plots
 compared to the main plot. A size of 5 means that the main plot is 5x wider

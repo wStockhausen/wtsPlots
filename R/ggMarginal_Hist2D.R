@@ -7,6 +7,7 @@
 #' @param data The data.frame to use for creating the plots.
 #' @param x The name of the variable along the x axis.
 #' @param y The name of the variable along the y axis.
+#' @param weight (optional) name of the variable to use to weight observations
 #' @param size Integer describing the relative size of the marginal plots
 #' compared to the main plot. A size of 5 means that the main plot is 5x wider
 #' and 5x taller than the marginal plots.
@@ -75,7 +76,7 @@
 #' @importFrom scales squish
 #' @export
 ggMarginal_Hist2D <- function(
-                       data, x, y, size = 5,
+                       data, x, y, weight = NULL, size = 5,
                        after_stat_var=c("ncount","count","density","ndensity"),
                        hist_scale = c("arithmetic","log10","4th-root"),
                        bins = 30,
@@ -104,11 +105,11 @@ ggMarginal_Hist2D <- function(
   after_stat_var = rlang::arg_match(after_stat_var);
   hist_scale     = rlang::arg_match(hist_scale);
   if (hist_scale=="arithmetic") {
-    p2d = ggplot(data,aes({{x}},{{y}},fill=ggplot2::after_stat(.data[[after_stat_var]])));
+    p2d = ggplot(data,aes({{x}},{{y}},weight={{weight}},fill=ggplot2::after_stat(.data[[after_stat_var]])));
   } else if (hist_scale=="log10") {
-    p2d = ggplot(data,aes({{x}},{{y}},fill=log10(ggplot2::after_stat(.data[[after_stat_var]]))));
+    p2d = ggplot(data,aes({{x}},{{y}},weight={{weight}},fill=log10(ggplot2::after_stat(.data[[after_stat_var]]))));
   } else if (hist_scale=="4th-root") {
-    p2d = ggplot(data,aes({{x}},{{y}},fill=(ggplot2::after_stat(.data[[after_stat_var]])^0.25)));
+    p2d = ggplot(data,aes({{x}},{{y}},weight={{weight}},fill=(ggplot2::after_stat(.data[[after_stat_var]])^0.25)));
   }
   p2d = p2d +
         stat_bin_2d(bins=bins,binwidth=binwidths,drop=TRUE) + 
