@@ -1,13 +1,14 @@
 Package: wtsPlots
 Type: Package
 Title: Functions for creating various types of plots
-Version: 2025.03.24
-Date: 2025-03-24
+Version: 2025.08.16
+Date: 2025-08-16
 Author: William Stockhausen
 Maintainer: William Stockhausen <william.stockhausen@noaa.gov>
 Description: Contains functions for various types of plots.
 License: MIT + file LICENSE
 Imports:
+    cowplot,
     dplyr,
     ggplot2,
     grid,
@@ -17,7 +18,6 @@ Imports:
     scales,
     wtsUtilities
 Suggests: 
-    cowplot,
     rstan, 
     tmbstan
 RoxygenNote: 7.3.2
