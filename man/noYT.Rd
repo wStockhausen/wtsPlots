@@ -7,7 +7,7 @@
 noYT()
 }
 \value{
-invisibly, a `ggplot2` theme obj
+invisibly, a [ggplot2::theme] object
 }
 \description{
 Function to turn off y-axis title

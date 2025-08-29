@@ -8,7 +8,7 @@
 #' @export
 #' 
 getLegend<-function(plot,return_all=FALSE){
-  getPlotComponent(plot,"guide-box",return_all=return_all)
+  getPlotComponent(plot,"guide-box",return_all=return_all);
 }
 
 #' 
@@ -21,12 +21,12 @@ getLegend<-function(plot,return_all=FALSE){
 #' @export
 #' 
 plotComponentNames<-function (plot) {
-    if (gtable::is.gtable(plot)) {
-        plot$layout$name
-    }
-    else {
-        cowplot::as_gtable(plot)$layout$name
-    }
+  if (gtable::is.gtable(plot)) {
+      plot$layout$name
+  }
+  else {
+      cowplot::as_gtable(plot)$layout$name
+  }
 }
 
 #' 
@@ -58,33 +58,33 @@ plotComponents<-function (plot) {
 #' @export
 #' 
 getPlotComponent<-function (plot, pattern, return_all = FALSE) {
-    plot <- as_gtable(plot)
-    grob_names <- plotComponentNames(plot)
-    grobs <- plotComponents(plot)
-    grobIndex <- which(grepl(pattern, grob_names))
-    if (length(grobIndex) != 0) {
-        if (length(grobIndex) > 1 && !return_all) {
-            warning("Multiple components found; returning the first one. To return all, use `return_all = TRUE`.")
-            grobIndex <- grobIndex[1]
-            matched_grobs <- grobs[[grobIndex]]
-        }
-        else if (length(grobIndex) > 1 && return_all) {
-            matched_grobs <- grobs[grobIndex]
-        }
-        else {
-            matched_grobs <- grobs[[grobIndex]]
-        }
-    }
-    else {
-        matched_grobs <- NULL
-    }
-    invisible(matched_grobs)
+  plot <- as_gtable(plot)
+  grob_names <- plotComponentNames(plot)
+  grobs <- plotComponents(plot)
+  grobIndex <- which(grepl(pattern, grob_names))
+  if (length(grobIndex) != 0) {
+      if (length(grobIndex) > 1 && !return_all) {
+          warning("Multiple components found; returning the first one. To return all, use `return_all = TRUE`.")
+          grobIndex <- grobIndex[1]
+          matched_grobs <- grobs[[grobIndex]]
+      }
+      else if (length(grobIndex) > 1 && return_all) {
+          matched_grobs <- grobs[grobIndex]
+      }
+      else {
+          matched_grobs <- grobs[[grobIndex]]
+      }
+  }
+  else {
+      matched_grobs <- NULL
+  }
+  invisible(matched_grobs);
 }
 
 #' 
 #' @title Turn off ggplot2 legend 
 #' @description Function to turn off y-axis title
-#' @return invisibly, a `ggplot2` theme obj
+#' @return invisibly, a [ggplot2::theme] object
 #' @details Shortcut to "ggplot2::theme(legend.position="none")".
 #' @importFrom ggplot2 theme
 #' @export
@@ -104,7 +104,7 @@ noXT<-function(){return(ggplot2::theme(axis.title.x=element_blank()));}
 #' 
 #' @title Turn off ggplot2 y-axis title 
 #' @description Function to turn off y-axis title
-#' @return invisibly, a `ggplot2` theme obj
+#' @return invisibly, a [ggplot2::theme] object
 #' @details Shortcut to "ggplot2::theme(axis.title.y=element_blank())".
 #' @importFrom ggplot2 theme
 #' @export
